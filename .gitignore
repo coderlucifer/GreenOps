@@ -1,0 +1,13 @@
+# React
+GreenOps/GreenOps/node_modules
+GreenOps/GreenOps/dist
+
+# Python
+GreenOps_Engine/__pycache__/
+*.pyc
+venv/
+
+# General
+.env
+.DS_Store
+Thumbs.db
