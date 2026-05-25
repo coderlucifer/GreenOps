@@ -57,6 +57,7 @@ DEFAULT_GRID_EMISSION_FACTOR = 0.094  # kg CO2 / kWh
 DEFAULT_WUE = 1.15                   # L / kWh
 ENERGY_FLOOR_WH = 0.05
 MAX_TOTAL_REDUCTION = 0.85  # 85%
+COST_PER_WH_USD = 0.0025    # Assumed blended GPU API cost ($2.50 per kWh)
 
 
 # ENVIRONMENTAL CALCULATIONS (BOUNDARY CONVERSIONS ONLY)
@@ -137,6 +138,8 @@ def run_greenops_engine(
         "optimized_co2_g": calculate_co2_g(current_energy, grid_emission_factor),
         "baseline_water_ml": calculate_water_ml(baseline_energy, wue),
         "optimized_water_ml": calculate_water_ml(current_energy, wue),
+        "baseline_cost_usd": round(baseline_energy * COST_PER_WH_USD, 4),
+        "optimized_cost_usd": round(current_energy * COST_PER_WH_USD, 4),
         "applied_optimizations": applied,
     }
 
@@ -145,6 +148,9 @@ def run_greenops_engine(
     )
     result["water_saved_ml"] = round(
         result["baseline_water_ml"] - result["optimized_water_ml"], 4
+    )
+    result["cost_saved_usd"] = round(
+        result["baseline_cost_usd"] - result["optimized_cost_usd"], 4
     )
 
     return result

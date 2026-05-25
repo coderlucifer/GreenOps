@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greenops"
+version = "1.0.0"
+description = "Track the carbon footprint of your AI API calls"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "GreenOps", email = "greenops@example.com"},
+]
+keywords = ["ai", "sustainability", "carbon", "llm", "openai", "tracking"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0"]
+
+[project.urls]
+Homepage = "https://github.com/greenops/greenops-sdk"
+Documentation = "https://github.com/greenops/greenops-sdk#readme"
+Issues = "https://github.com/greenops/greenops-sdk/issues"
