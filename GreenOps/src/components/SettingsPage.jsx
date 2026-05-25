@@ -167,7 +167,7 @@ export default function SettingsPage({ user }) {
 <span style={{ color: "#c678dd" }}>import</span> openai<br/><br/>
 client = openai.OpenAI(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;api_key=<span style={{ color: "#98c379" }}>"sk-your-openai-key"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;base_url=<span style={{ color: "#98c379" }}>"http://localhost:8000/proxy/openai/v1"</span>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;base_url=<span style={{ color: "#98c379" }}>"{import.meta.env.VITE_API_URL || "http://localhost:8000"}/proxy/openai/v1"</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;default_headers={"{"}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#98c379" }}>"x-api-key"</span>: <span style={{ color: "#98c379" }}>"{profile?.api_keys?.[0]?.key || "YOUR_GREENOPS_KEY"}"</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;{"}"}<br/>
